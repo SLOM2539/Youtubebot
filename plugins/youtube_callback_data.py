@@ -25,11 +25,11 @@ async def catch_youtube_fmtid(c, m):
         print(media_type)
         if media_type == 'audio':
             buttons = InlineKeyboardMarkup([[InlineKeyboardButton(
-                "اغـنية 🎵", callback_data=f"{media_type}||{format_id}||{yturl}"), InlineKeyboardButton("مـلف 🗂",
+                "اغنية", callback_data=f"{media_type}||{format_id}||{yturl}"), InlineKeyboardButton("ملف",
                                                                                                     callback_data=f"docaudio||{format_id}||{yturl}")]])
         else:
             buttons = InlineKeyboardMarkup([[InlineKeyboardButton(
-                "فيـديو 🎬", callback_data=f"{media_type}||{format_id}||{yturl}"), InlineKeyboardButton("مـلف 🗂",
+                "فيديو", callback_data=f"{media_type}||{format_id}||{yturl}"), InlineKeyboardButton("ملف",
                                                                                                     callback_data=f"docvideo||{format_id}||{yturl}")]])
 
         await m.edit_message_reply_markup(buttons)
@@ -74,7 +74,7 @@ async def catch_youtube_dldata(c, q):
     if not os.path.isdir(userdir):
         os.makedirs(userdir)
     await q.edit_message_reply_markup(
-        InlineKeyboardMarkup([[InlineKeyboardButton("يتم التـحميل انـتظر ⚕️", callback_data="down")]]))
+        InlineKeyboardMarkup([[InlineKeyboardButton("قاعد احمل انتظر", callback_data="down")]]))
     filepath = os.path.join(userdir, filext)
     # await q.edit_message_reply_markup([[InlineKeyboardButton("Processing..")]])
 
